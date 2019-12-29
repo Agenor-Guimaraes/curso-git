@@ -1,0 +1,85 @@
+git config --global user.name "nomeUsuario"
+git config --global user.email "emailUsuario"
+
+ssh-keygen //Comando para criação de chaves para uso de contas do github no computador de trabalho.
+            Pode ser dado enter para todas as opções. no github ir em countseting e na opção ssh.
+            colar nesta opção a chave gerada na máquina que se quer cadastrar.
+
+
+git init //criar repositório, usado para iniciar tudo
+git init --bare //cria repositório em diretório compartilhado via rede.
+git clone [git@github.com:Agenor-Guimaraes/curso-git.git] [github1] //comando usado para clonar repositório 
+                                do github. o que está primeiro colchetes: chave ssh do repositório.
+                                o que está no segundo colchetes: nome desejado para o repositório clonado.
+                                não usar os colchetes no comando.
+git clone file:////nomeservidorOUip/pasta-diretorio nomeprojeto //para clonar o projeto na pasta local
+                                                                    de trabalho.
+git remote //para saber o nome do servidor remoto no git. origin é o nome padrão do git.
+git push origin master //enviar os arquivos para origin que estão no master.
+git pull origin master //usado para trazer as atualizações que estão no servidor para o projeto local.
+                        o comando clone é utilizado apena na primeira vez.
+
+
+git add nomearquivo.extensão
+git add *.extensão
+git add . // usados para adicionar ao repositório
+
+
+git log //usado para ver pontos da história
+git log -p //usado para ver pontos da história com mais informações
+git log -p -1 //usado para ver mais informações, porém do último commit
+git log -p -2 ou mais //usado para 2 ou mais commit
+
+
+git commit -m "mensagem" // usado para salvar o repositório no git
+git commit -a -m "mensagem" //usado para pular a etapa add
+git commit --amend -m "mensagem" //usado para editar o ultimo commit
+
+
+git status // usado para ver as modificações pendentes para commit
+
+
+git show númerocommit
+git show // mostra detalhes do ultimo ponto da história
+git show numeroTag //mostra detalhes da tag
+
+
+para o git ignorar algum arquivo, criar arquivo .gitignore e em cada linha coloar o nome
+dos arquivos a serem ignorados.
+
+
+git diff //usado para ver o que foi modificado antes de ir para staged area
+git diff --staged//usado para ver as modificações após o add
+
+
+gitk //abre visualizador gráfico de relatórios
+
+
+git log --pretty=oneline //para ver os numeros de commit em única linha.
+
+git checkout -- nomearquivo //Volta  o arquivo a ultima versão do commit antes das 
+                            modificaçoes realizadas
+                            server para trocar de branch
+
+git rm nomearquivo //remove arquivos do repositório.
+
+
+git tag -a v1.0 -m "versão 1.0" //Cria uma tag, onde (-a) significa que é anota quem criou, data e hora.
+                                    cria no commit atual.
+
+
+git checkout numeroTag //troca os arquivos pelos daquela versão.
+                        exemplo: V1.0 ou V0.0 e assim por diante
+
+
+git tag -d numeroTag //apaga a tag de numeroTag.
+
+
+git branch teste //cria o ambiente de teste, o branch de teste.
+git checkout teste//muda para o ambiente de teste.
+git checkout -b teste //Cria e muda para o ambiente de teste em único comando.
+git merge teste //Estando no ambiente master, copia as alterações realizadas no ambiente de teste
+                    para as arquivos do ambiente master.
+git branch -d teste //apaga o ambiente de teste.
+
+
